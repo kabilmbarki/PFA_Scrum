@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pfaapp/page6.dart';
+import 'package:pfaapp/welcome.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +12,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return agents();
+    return MaterialApp(
+      // ... your app content
+      home: WelcomePage(),
+    );
   }
 }

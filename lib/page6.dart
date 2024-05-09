@@ -47,7 +47,7 @@ class _agentsState extends State<agents> {
         ),
         body: Container(
           color: const Color.fromARGB(
-              255, 59, 72, 78), // Set background color to grey
+              255, 22, 28, 31), // Set background color to grey
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
