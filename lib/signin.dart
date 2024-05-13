@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:pfaapp/page6.dart';
 import 'package:pfaapp/signup.dart';
 
 class SignIn extends StatefulWidget {
@@ -96,7 +97,11 @@ class _SignInState extends State<SignIn> {
             Container(
               margin: EdgeInsets.all(40),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => agents(),
+                  ));
+                },
                 child: Text(
                   "Se Connecter",
                   style: TextStyle(
