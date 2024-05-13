@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:pfaapp/signin.dart';
-import 'package:pfaapp/welcome.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
