@@ -23,7 +23,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   BoxFit.cover, // Ensures the image covers the entire container
             ),
           ),
-          child: Column(
+          child: ListView(
             children: [
               Container(
                 height: 200,
@@ -53,34 +53,37 @@ class _WelcomePageState extends State<WelcomePage> {
               SizedBox(
                 height: 200,
               ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SignIn()),
-                  );
-                },
-                child: Text(
-                  'Commencer',
-                  style: TextStyle(
-                    color: Colors.white,
+              Container(
+                margin: EdgeInsets.only(left: 40, right: 40),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SignIn()),
+                    );
+                  },
+                  child: Text(
+                    'Commencer',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
                   ),
-                ),
-                style: ElevatedButton.styleFrom(
-                  fixedSize: Size(350, 60),
-                  backgroundColor: Colors.transparent,
-                  // Set the background color to gray
-                  textStyle: TextStyle(
-                    // Optional: Set text color
-                    fontSize: 30,
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        30.0), // Adjust corner radius as needed
-                    side: BorderSide(
-                      color: Color.fromARGB(255, 244, 117,
-                          54), // Set border color (adjust as desired)
-                      width: 1.0, // Set border width
+                  style: ElevatedButton.styleFrom(
+                    fixedSize: Size(350, 60),
+                    backgroundColor: Colors.transparent,
+                    // Set the background color to gray
+                    textStyle: TextStyle(
+                      // Optional: Set text color
+                      fontSize: 30,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(
+                          30.0), // Adjust corner radius as needed
+                      side: BorderSide(
+                        color: Color.fromARGB(255, 244, 117,
+                            54), // Set border color (adjust as desired)
+                        width: 1.0, // Set border width
+                      ),
                     ),
                   ),
                 ),
