@@ -4,46 +4,68 @@ import 'login.dart';
 class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: const Color(0xFF222831),
-        body: SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                SizedBox(
-                  width: 250,
-                  height: 150,
-                  child: Image.asset(
-                    "assets/images/logo.png",
-                    fit: BoxFit.cover,
+    return Scaffold(
+      backgroundColor: const Color(0xFF222831),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              SizedBox(
+                width: 250,
+                height: 150,
+                child: Image.asset(
+                  "assets/images/logo.png",
+                  fit: BoxFit.cover,
+                ),
+              ),
+              // Input Fields
+              const TextFieldContainer(labelText: 'nom et prénom', prefixIcon: Icons.person),
+              const TextFieldContainer(labelText: 'nom d\'utilisateur', prefixIcon: Icons.person),
+              const TextFieldContainer(labelText: 'nom de l\'entreprise', prefixIcon: Icons.business),
+              const TextFieldContainer(labelText: 'adresse email', keyboardType: TextInputType.emailAddress, prefixIcon: Icons.email),
+              const TextFieldContainer(labelText: 'mot de passe', obscureText: true, prefixIcon: Icons.fingerprint),
+              const TextFieldContainer(labelText: 'confirmer le mot de passe', obscureText: true, prefixIcon: Icons.lock),
+              const TextFieldContainer(labelText: 'numéro de téléphone', keyboardType: TextInputType.phone, prefixIcon: Icons.phone),
+
+              // Sign-Up Button
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    side: const BorderSide(color: Colors.orange, width: 2), // Border
+                    backgroundColor: Colors.transparent, // Background color
+                    foregroundColor: Colors.white, // Text color
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10), // Rounded corners
+                    ),
+                    fixedSize: const Size(180, 50),
+                  ),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Login()),
+                      );
+                    },
+                    child: const Text(
+                      "S'inscrire",
+                      style: TextStyle(fontSize: 20),
+                    ),
                   ),
                 ),
-                // Input Fields
-                const TextFieldContainer(labelText: 'nom et prénom', prefixIcon: Icons.person),
-                const TextFieldContainer(labelText: 'nom d\'utilisateur', prefixIcon: Icons.person),
-                const TextFieldContainer(labelText: 'nom de l\'entreprise', prefixIcon: Icons.business),
-                const TextFieldContainer(labelText: 'adresse email', keyboardType: TextInputType.emailAddress, prefixIcon: Icons.email),
-                const TextFieldContainer(labelText: 'mot de passe', obscureText: true, prefixIcon: Icons.lock),
-                const TextFieldContainer(labelText: 'confirmer le mot de passe', obscureText: true, prefixIcon: Icons.lock),
-                const TextFieldContainer(labelText: 'numéro de téléphone', keyboardType: TextInputType.phone, prefixIcon: Icons.phone),
-
-                // Sign-Up Button
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      side: const BorderSide(color: Colors.orange, width: 2), // Border
-                      backgroundColor: Colors.transparent, // Background color
-                      foregroundColor: Colors.white, // Text color
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10), // Rounded corners
-                      ),
-                      fixedSize: const Size(180, 50),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "Vous avez déjà un compte ? ",
+                      style: TextStyle(fontSize: 17, color: Colors.white),
                     ),
-                    child: GestureDetector(
+                    GestureDetector(
                       onTap: () {
                         Navigator.push(
                           context,
@@ -51,37 +73,13 @@ class SignUp extends StatelessWidget {
                         );
                       },
                       child: const Text(
-                        "S'inscrire",
-                        style: TextStyle(fontSize: 20),
+                        "Se connecter",
+                        style: TextStyle(fontSize: 17, color: Colors.orange),
                       ),
                     ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        "Vous avez déjà un compte ? ",
-                        style: TextStyle(fontSize: 17, color: Colors.white),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Login()),
-                          );
-                        },
-                        child: const Text(
-                          "Se connecter",
-                          style: TextStyle(fontSize: 17, color: Colors.orange),
-                        ),
-                      ),
-                    ],),
-                ),
-              ],
-            ),
+                  ],),
+              ),
+            ],
           ),
         ),
       ),

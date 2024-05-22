@@ -67,13 +67,22 @@ flutter:
   - assets/images/font_ecran.jpg
   - assets/images/facebook.png
   - assets/images/google.png
-  - assets/images/apple-logo.png
-  - assets/images/flags/england.png
-  - assets/images/flags/france.png
-  - assets/images/flags/spain.png
-  - assets/images/flags/italy.png
-  - assets/images/flags/germany.png
-  - assets/images/flags/saudi_arabia.png
+  - assets/images/apple.png
+  - assets/images/flags/english.png
+  - assets/images/flags/french.png
+  - assets/images/flags/spanish.png
+  - assets/images/flags/italian.png
+  - assets/images/flags/german.png
+  - assets/images/flags/arabic.png
+  - assets/images/agents/AlexFrerro.png
+  - assets/images/agents/DanielHugo.png
+  - assets/images/agents/EmmaLebon.png
+  - assets/images/agents/LucasSilva.png
+  - assets/images/agents/MaryLaporte.png
+  - assets/images/agents/SamSchneider.png
+  - assets/images/agents/AngelaRossi.png
+  - assets/images/agents/PaulWalker.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

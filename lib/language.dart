@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'home.dart';
 class LanguageList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class LanguageList extends StatelessWidget {
                 const Padding(
                   padding: EdgeInsets.symmetric(vertical: 20),
                   child: Text(
-                    'Choisissez les langues des agents',
+                    'selectionner les langues',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,
@@ -33,7 +33,12 @@ class LanguageList extends StatelessWidget {
                 Languages(),
                 Padding(padding: const EdgeInsets.symmetric(vertical: 20),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MyHomePage()),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       side: const BorderSide(color: Colors.orange, width: 2), // Border
                       backgroundColor: Colors.transparent, // Background color
@@ -65,7 +70,7 @@ class Languages extends StatefulWidget {
 
 class _LanguagesState extends State<Languages> {
   final List<String> languages = ['Anglais', 'Français', 'Espagnol', 'Allemand', 'Italian', 'Arabe'];
-  final List<String> flags = [ 'assets/images/flags/england.png', 'assets/images/flags/france.png', 'assets/images/flags/spain.png', 'assets/images/flags/germany.png', 'assets/images/flags/italy.png', 'assets/images/flags/saudi_arabia.png' ];
+  final List<String> flags = [ 'assets/images/flags/english.png', 'assets/images/flags/french.png', 'assets/images/flags/spanish.png', 'assets/images/flags/german.png', 'assets/images/flags/italian.png', 'assets/images/flags/arabic.png'];
   
   List<String> selectedLanguages = [];
 

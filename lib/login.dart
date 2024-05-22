@@ -5,101 +5,99 @@ import 'language.dart';
 class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: const Color(0xFF222831),
-        body: SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                SizedBox(
-                  width: 250,
-                  height: 150,
-                  child: Image.asset(
-                    "assets/images/logo.png",
-                    fit: BoxFit.cover,
-                  ),
+    return Scaffold(
+      backgroundColor: const Color(0xFF222831),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              SizedBox(
+                width: 250,
+                height: 150,
+                child: Image.asset(
+                  "assets/images/logo.png",
+                  fit: BoxFit.cover,
                 ),
-                // Input Fields
-                const TextFieldContainer(labelText: 'nom d\'utilisateur', prefixIcon: Icons.person),
-                const TextFieldContainer(labelText: 'mot de passe', obscureText: true, prefixIcon: Icons.fingerprint, suffixIcon: Icons.visibility),
+              ),
+              // Input Fields
+              const TextFieldContainer(labelText: 'nom d\'utilisateur', prefixIcon: Icons.person),
+              const TextFieldContainer(labelText: 'mot de passe', obscureText: true, prefixIcon: Icons.fingerprint, suffixIcon: Icons.visibility),
 
-                // Forgot Password
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 30),
-                  child: Align(
-                    alignment: Alignment.centerRight,
-                    child: GestureDetector(
-                      onTap: () {},
-                      child: const Text(
-                        "Mot de passe oublié ?",
-                        style: TextStyle(fontSize: 17, color: Colors.orange),
-                      )
-                    ),
-                  ),
-                ),
-
-                // Sign-Up Button
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 20),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => LanguageList()),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      side: const BorderSide(color: Colors.orange, width: 2), // Border
-                      backgroundColor: Colors.transparent, // Background color
-                      foregroundColor: Colors.white, // Text color
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10), // Rounded corners
-                      ),
-                      fixedSize: const Size(180, 50),
-                    ),
+              // Forgot Password
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 30),
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: GestureDetector(
+                    onTap: () {},
                     child: const Text(
-                      "Se connecter",
-                      style: TextStyle(fontSize: 20),
-                    ),
+                      "Mot de passe oublié ?",
+                      style: TextStyle(fontSize: 17, color: Colors.orange),
+                    )
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        "Vous n'avez pas un compte ? ",
-                        style: TextStyle(fontSize: 17, color: Colors.white),
-                      ),
-                      GestureDetector( 
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => SignUp()),
-                          );
-                        },
-                        child: const Text(
-                          "Inscrivez-vous",
-                          style: TextStyle(fontSize: 17, color: Colors.orange),
-                        ),
-                      ),
-                    ],),
+              ),
+
+              // Sign-Up Button
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => LanguageList()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    side: const BorderSide(color: Colors.orange, width: 2), // Border
+                    backgroundColor: Colors.transparent, // Background color
+                    foregroundColor: Colors.white, // Text color
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10), // Rounded corners
+                    ),
+                    fixedSize: const Size(180, 50),
+                  ),
+                  child: const Text(
+                    "Se connecter",
+                    style: TextStyle(fontSize: 20),
+                  ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10),
-                  child: Text(
-                    "Ou",
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  )
-                ),
-                const Other(faang: "google", imagePath: "assets/images/google.png"),
-                const Other(faang: "facebook", imagePath: "assets/images/facebook.png"),
-                const Other(faang: "apple", imagePath: "assets/images/apple-logo.png"),
-              ],
-            ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "Vous n'avez pas un compte ? ",
+                      style: TextStyle(fontSize: 17, color: Colors.white),
+                    ),
+                    GestureDetector( 
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SignUp()),
+                        );
+                      },
+                      child: const Text(
+                        "Inscrivez-vous",
+                        style: TextStyle(fontSize: 17, color: Colors.orange),
+                      ),
+                    ),
+                  ],),
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 10),
+                child: Text(
+                  "OU",
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                )
+              ),
+              const Other(faang: "google", imagePath: "assets/images/google.png"),
+              const Other(faang: "facebook", imagePath: "assets/images/facebook.png"),
+              const Other(faang: "apple", imagePath: "assets/images/apple.png"),
+            ],
           ),
         ),
       ),
@@ -197,11 +195,11 @@ class Other extends StatelessWidget {
           onPressed: () {},
           label: Text(
           "Continuer avec $faang",
-          style: const TextStyle(color: Colors.white),
+          style: const TextStyle(color: Colors.black),
           ),
           style: OutlinedButton.styleFrom(
             side: const BorderSide(color: Colors.white, width: 2), // Border
-            backgroundColor: Colors.transparent, // Background color
+            backgroundColor: Colors.white, // Background color
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10), // Rounded corners
             ),
