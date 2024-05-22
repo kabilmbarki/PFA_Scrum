@@ -12,8 +12,7 @@ class _profileState extends State<profile> {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      color: const Color.fromARGB(
-          255, 22, 28, 31), // Set background color to grey
+      color: const Color(0xFF222831), // Set background color to grey
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
@@ -34,7 +33,7 @@ class _profileState extends State<profile> {
             style: TextStyle(color: Color(0xff0eaff3), fontSize: 20),
           ),
           const SizedBox(height: 5),
-          const Text('Mon Nom et Mon Prenom',
+          const Text('John Doe',
               style: TextStyle(color: Colors.white, fontSize: 20)),
           const SizedBox(height: 5),
           const Text(

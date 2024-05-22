@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
+import 'selectedLang.dart';
 class LanguageList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -69,10 +70,8 @@ class Languages extends StatefulWidget {
 }
 
 class _LanguagesState extends State<Languages> {
-  final List<String> languages = ['Anglais', 'Français', 'Espagnol', 'Allemand', 'Italian', 'Arabe'];
+  final List<String> languages = ['english', 'french', 'spanish', 'german', 'italian', 'arabic'];
   final List<String> flags = [ 'assets/images/flags/english.png', 'assets/images/flags/french.png', 'assets/images/flags/spanish.png', 'assets/images/flags/german.png', 'assets/images/flags/italian.png', 'assets/images/flags/arabic.png'];
-  
-  List<String> selectedLanguages = [];
 
   @override
   Widget build(BuildContext context) {
@@ -89,10 +88,10 @@ class _LanguagesState extends State<Languages> {
           return GestureDetector(
             onTap: () {
               setState(() {
-                if (selectedLanguages.contains(languages[index])) {
-                  selectedLanguages.remove(languages[index]);
+                if (selectedLangs.contains(languages[index])) {
+                  selectedLangs.remove(languages[index]);
                 } else {
-                  selectedLanguages.add(languages[index]);
+                  selectedLangs.add(languages[index]);
                 }
               });
             },
@@ -101,7 +100,7 @@ class _LanguagesState extends State<Languages> {
               height: 70, 
               margin: const EdgeInsets.symmetric(vertical: 7.0),// Set the width of each box
               child: Card(
-                color: selectedLanguages.contains(languages[index]) ? Color.fromARGB(255, 114, 219, 243) : Colors.white,
+                color: selectedLangs.contains(languages[index]) ? Color.fromARGB(255, 114, 219, 243) : Colors.white,
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [

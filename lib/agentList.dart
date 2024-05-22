@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'agentProfile.dart';
+import 'selectedLang.dart';
 
 class Agent {
   final int id;
@@ -53,7 +54,7 @@ class _AgentListState extends State<AgentList> {
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 20),
             child: Text(
-              'selectionner les agents',
+              'Liste des agents',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 20,
@@ -64,7 +65,11 @@ class _AgentListState extends State<AgentList> {
             child: ListView.builder(
               itemCount: agents.length,
               itemBuilder: (context, index) {
-                return AgentCard(agent: agents[index]);
+                if (selectedLangs.contains(agents[index].language)) {
+                  return AgentCard(agent: agents[index]);
+                } else {
+                  return const SizedBox.shrink();
+                }
               },
             ),
           ),
@@ -82,6 +87,7 @@ class AgentCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+
         Navigator.push(context,
           MaterialPageRoute(builder: (context) => AgentProfile(agent: agent))
         );

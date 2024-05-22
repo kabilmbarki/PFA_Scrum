@@ -20,42 +20,37 @@ class _MyHomePage extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         toolbarHeight: 80,
-        title: Row(
-          children: [
-            Container(
-              width: 150,
-              height: 100,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/images/logo.png"),
-                  fit: BoxFit.cover,
-                ),
+        title: Padding(
+          padding: const EdgeInsets.only(right: 100.0),
+          child: Container(
+            width: 150,
+            height: 100,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/images/logo.png"),
+                fit: BoxFit.cover,
               ),
             ),
-            const Spacer(),
-            IconButton(
+          ),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 20.0),
+            child: IconButton(
               icon: const Icon(
                 Icons.account_circle,
                 color: Colors.white,
                 size: 40,
               ),
               onPressed: () {
-                _bodyWidget = profile();
+                setState(() {
+                  _bodyWidget = profile();
+                });
               },
             ),
-          ],
-        ),
-        leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.transparent,
-            size: 0,
           ),
-          onPressed: () {
-            Null;
-          },
-        ),
-      ),
+        ],
+      ),          
       // if one or more languages are selected:
       body: _bodyWidget,
       bottomNavigationBar: BottomAppBar(
@@ -139,7 +134,9 @@ class _MyHomePage extends State<MyHomePage> {
             IconButton(
               icon: const Icon(Icons.settings),
               onPressed: () {
-                // Agents button logic
+                setState(() {
+                  _bodyWidget = profile();
+                });
               },
               color: Colors.white,
               iconSize: 40,

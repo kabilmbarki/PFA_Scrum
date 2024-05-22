@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mega_tel/agentBasket.dart';
 import 'package:mega_tel/home.dart';
 import 'selectedAgents.dart';
 import 'agentList.dart'as list;
@@ -102,10 +101,15 @@ class AgentProfile extends StatelessWidget{
           const SizedBox(height: 30),
           ElevatedButton(
             onPressed: () {
-              addAgent(agent);
+              if (selectedAgents.contains(agent)) {
+                removeAgent(agent);
+              } else {
+                addAgent(agent);
+              }
               Navigator.push(context,
-                MaterialPageRoute(builder: (context) => MyHomePage()),
-              );
+                MaterialPageRoute(builder: (context) => MyHomePage(),
+              ),
+            );
           },
           style: ElevatedButton.styleFrom(
           backgroundColor: const Color.fromARGB(255, 59, 72, 78),
@@ -121,9 +125,9 @@ class AgentProfile extends StatelessWidget{
             ),
           ),
           ),
-          child: const Text(
-            'Ajouter au panier',
-            style: TextStyle(
+          child: Text(
+            selectedAgents.contains(agent) ? 'Retirer du panier' : 'Ajouter au panier',
+            style: const TextStyle(
               color: Colors.white,
               ),
             ),
